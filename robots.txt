@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# KONCEPT: pred spustenim nahradit za Allow: / a Sitemap: https://djferi.sk/sitemap.xml
