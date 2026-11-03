@@ -18,6 +18,7 @@
 <meta property="og:locale" content="sk_SK">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonty/playfair-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonty/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="fotky/hero.webp" imagesrcset="fotky/hero-800.webp 800w, fotky/hero.webp 1600w" imagesizes="(max-width: 860px) 100vw, 55vw">
@@ -95,9 +96,8 @@ p{margin:0 0 1em}
 /* ===== HLAVIČKA ===== */
 .top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
-.brand{text-decoration:none;display:flex;align-items:baseline;gap:10px;white-space:nowrap}
-.brand b{font:italic 500 1.6rem/1 var(--serif);color:var(--plum-800)}
-.brand small{font:600 .65rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text)}
+.brand{display:block;text-decoration:none;color:var(--plum-800);--logo-gold:var(--gold-text);--logo-rose:var(--rose)}
+.brand svg{display:block;height:54px;width:auto}
 .nav{display:flex;gap:28px;font:500 .9rem/1 var(--sans)}
 .nav a{text-decoration:none;color:var(--muted)}
 .nav a:hover{color:var(--rose-dark)}
@@ -190,8 +190,8 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
 .alt-contact a{color:#fff;font-weight:600}
 .foot{margin-top:96px;border-top:1px solid rgba(255,255,255,.12);padding:28px 0 32px;font-size:.85rem;color:rgba(255,255,255,.65)}
 .foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;text-align:left}
-.foot .brand b{color:#fff;font-size:1.3rem}
-.foot .brand small{color:var(--gold)}
+.foot .brand{color:#fff;--logo-gold:var(--gold);--logo-rose:#FF6A8A}
+.foot .brand svg{height:62px}
 .foot p{margin:0}
 
 /* ===== LIŠTA „ZAVOLAŤ“ NA MOBILE ===== */
@@ -219,7 +219,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
 }
 @media (max-width:520px){
   .wrap{padding:0 16px}
-  .brand small{display:none}
+  .brand svg{height:48px}
   .actions .btn{flex:1 1 100%}
   .cards{grid-template-columns:1fr}
   .ticks{grid-template-columns:1fr}
@@ -252,13 +252,19 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
       <path d="M0 425 C 200 630, 540 700, 1220 695" fill="none" stroke="url(#sw-a)" stroke-width="2" filter="url(#sw-glow)"/>
       <path d="M0 425 C 200 630, 540 700, 1220 695" fill="none" stroke="#FFC2CF" stroke-opacity=".55" stroke-width=".8"/>
     </symbol>
+    <!-- LOGO: „DJ“ nad menom „Feri“ a ružový oblúk z vizitky -->
+    <symbol id="logo" viewBox="40 6 182 100">
+      <text x="133" y="25" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="700" font-size="17" letter-spacing="6" fill="var(--logo-gold)">DJ</text>
+      <text x="130" y="76" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="600" font-size="58" fill="currentColor">Feri</text>
+      <path d="M48 90 C 100 106, 170 104, 214 86" fill="none" stroke="var(--logo-rose)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
   </defs>
 </svg>
 
 <!-- ================= HLAVIČKA ================= -->
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#"><b>DJ Feri</b><small>Party DJs</small></a>
+    <a class="brand" href="#" aria-label="DJ Feri – na začiatok stránky"><svg viewBox="0 0 182 100" aria-hidden="true"><use href="#logo" width="182" height="100"/></svg></a>
     <nav class="nav" aria-label="Hlavné menu">
       <a href="#kto-som">Kto som</a>
       <a href="#recenzie">Recenzie</a>
@@ -467,7 +473,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
   <!-- ================= PÄTIČKA ================= -->
   <footer class="foot">
     <div class="wrap">
-      <a class="brand" href="#"><b>DJ Feri</b><small>Party DJs</small></a>
+      <a class="brand" href="#" aria-label="DJ Feri – na začiatok stránky"><svg viewBox="0 0 182 100" aria-hidden="true"><use href="#logo" width="182" height="100"/></svg></a>
       <!-- OVERIŤ: údaje živnostníka -->
       <p>František Zsíros · IČO: doplniť · Sídlo: doplniť</p>
       <p>© 2026 djferi.sk</p>
