@@ -112,11 +112,11 @@ p{margin:0 0 1em}
 /* ===== JEMNÝ TÓN POZADIA =====
    Svetlá verzia farieb z vizitky – ružové a fialové odlesky na okrajoch. */
 .flow{background:
-  radial-gradient(55% 30% at 0% 8%, rgba(224,68,106,.11), transparent 70%),
-  radial-gradient(50% 28% at 100% 34%, rgba(122,26,106,.09), transparent 70%),
-  radial-gradient(55% 30% at 0% 62%, rgba(224,68,106,.09), transparent 70%),
-  radial-gradient(50% 28% at 100% 90%, rgba(122,26,106,.10), transparent 70%),
-  linear-gradient(180deg,#F6EEF4 0%,#FCF9FB 30%,#FBF7FA 70%,#F5ECF3 100%)}
+  radial-gradient(55% 30% at 0% 8%, rgba(224,68,106,.13), transparent 70%),
+  radial-gradient(50% 28% at 100% 34%, rgba(122,26,106,.11), transparent 70%),
+  radial-gradient(55% 30% at 0% 62%, rgba(224,68,106,.11), transparent 70%),
+  radial-gradient(50% 28% at 100% 90%, rgba(122,26,106,.12), transparent 70%),
+  linear-gradient(180deg,#F4EAF1 0%,#FAF5F8 30%,#F9F3F7 70%,#F2E6EF 100%)}
 
 /* ===== HERO ===== */
 .hero{padding:72px 0 96px}
@@ -133,7 +133,7 @@ p{margin:0 0 1em}
 
 /* ===== 1. KTO SOM ===== */
 .about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
-.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:var(--radius)}
+.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:var(--radius)}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
 .stat{border-top:2px solid var(--gold);padding-top:14px}
 .stat b{display:block;font:600 2.2rem/1 var(--serif);color:var(--plum-800)}
@@ -304,7 +304,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
 <section class="about" id="kto-som">
   <div class="wrap">
     <div class="about-photo">
-      <img src="fotky/o-mne.webp" width="900" height="900" alt="František Zsíros – DJ Feri" loading="lazy">
+      <img src="fotky/o-mne.webp" width="820" height="1024" alt="František Zsíros – DJ Feri s mikrofónom pri pulte" loading="lazy">
     </div>
     <div>
       <p class="eyebrow">Kto som</p>
@@ -363,14 +363,14 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
     </div>
     <div class="cards">
       <article class="card">
-        <img src="fotky/sluzba-svadby.webp" width="800" height="600" alt="Novomanželia pri torte medzi svetelnými fontánami" loading="lazy">
+        <img src="fotky/sluzba-svadby.webp" width="800" height="600" alt="Prvý tanec novomanželov medzi svetelnými fontánami" loading="lazy">
         <div class="card-body">
           <h3>Svadby</h3>
           <p>DJ, moderátor aj koordinátor programu v jednom. Svadobné zvyky, hry a čepčenie s citom.</p>
         </div>
       </article>
       <article class="card">
-        <img src="fotky/sluzba-plesy.webp" width="800" height="600" alt="Sála s lúčmi svetelných efektov nad stolmi" loading="lazy">
+        <img src="fotky/sluzba-plesy.webp" width="800" height="600" alt="Hostia na parkete v červenom svetle a lúčoch efektov" loading="lazy">
         <div class="card-body">
           <h3>Stužkové a plesy</h3>
           <p>Slávnostný program, tanečné bloky a nálada, na ktorú sa nezabúda.</p>
@@ -384,7 +384,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
         </div>
       </article>
       <article class="card">
-        <img src="fotky/sluzba-oslavy.webp" width="800" height="600" alt="Hostia tancujú na plnom parkete" loading="lazy">
+        <img src="fotky/sluzba-oslavy.webp" width="800" height="600" alt="Hostia na oslave mávajú obrúskami" loading="lazy">
         <div class="card-body">
           <h3>Oslavy</h3>
           <p>Narodeniny, jubileá či rodinné stretnutia. Karaoke a Just Dance pre všetky generácie.</p>
@@ -393,7 +393,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
     </div>
 
     <div class="tech">
-      <img src="fotky/technika.webp" width="1000" height="750" alt="Ruky DJ-a na mixážnom pulte" loading="lazy">
+      <img src="fotky/technika.webp" width="1000" height="750" alt="Nasvietená svadobná sála s DJ pódiom" loading="lazy">
       <div>
         <p class="eyebrow">Technika a efekty</p>
         <h3 style="font-size:clamp(1.6rem,3.5vw,2.1rem)">Svetelná show, ktorá premení každú sálu</h3>
@@ -412,12 +412,12 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
     </div>
 
     <div class="gallery-grid" id="galeria">
-      <a href="fotky/galeria-01.webp"><img src="fotky/galeria-01.webp" width="1000" height="750" alt="DJ Feri za pultom vo fialovom svetle" loading="lazy"></a>
+      <a href="fotky/galeria-01.webp"><img src="fotky/galeria-01.webp" width="1000" height="665" alt="Nevesta a hostia tancujú v kruhu" loading="lazy"></a>
       <a href="fotky/galeria-02.webp"><img src="fotky/galeria-02.webp" width="1000" height="665" alt="Prvý tanec novomanželov v plazivom dyme" loading="lazy"></a>
       <a href="fotky/galeria-03.webp"><img src="fotky/galeria-03.webp" width="1000" height="750" alt="Tancujúci pár v lúčoch svetelných efektov" loading="lazy"></a>
-      <a href="fotky/galeria-04.webp"><img src="fotky/galeria-04.webp" width="1000" height="751" alt="Nasvietená svadobná sála s DJ pódiom" loading="lazy"></a>
+      <a href="fotky/galeria-04.webp"><img src="fotky/galeria-04.webp" width="1000" height="668" alt="Plný parket pred DJ pódiom so svetelnými lúčmi" loading="lazy"></a>
       <a href="fotky/galeria-05.webp"><img src="fotky/galeria-05.webp" width="1000" height="665" alt="Novomanželia medzi svetelnými fontánami vonku" loading="lazy"></a>
-      <a href="fotky/galeria-06.webp"><img src="fotky/galeria-06.webp" width="1000" height="666" alt="Plný parket hostí v ružovom svetle" loading="lazy"></a>
+      <a href="fotky/galeria-06.webp"><img src="fotky/galeria-06.webp" width="1000" height="750" alt="Hostia s prskavkami okolo novomanželov v noci" loading="lazy"></a>
     </div>
     <div class="social-links">
       <a href="https://www.instagram.com/djferi_partydjs/" target="_blank" rel="noopener">Viac fotiek a videí na Instagrame</a>
