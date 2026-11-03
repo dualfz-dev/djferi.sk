@@ -34,7 +34,7 @@
   "image": "https://djferi.sk/fotky/og.jpg",
   "telephone": "+421905560884",
   "email": "djferi@partydjs.sk",
-  "priceRange": "950 € – 1500 €",
+  "priceRange": "od 850 €",
   "address": { "@type": "PostalAddress", "addressLocality": "Žilina", "addressCountry": "SK" },
   "areaServed": "Slovensko",
   "sameAs": [
@@ -208,9 +208,10 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
 /* ===== KONTAKT (tmavý) ===== */
 .contact{padding:104px 0 0}
 .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
-.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:6px 0 26px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
-.price b{font:600 clamp(2rem,5vw,2.8rem)/1.1 var(--serif);color:#fff;white-space:nowrap}
-.price span{font-size:.88rem;color:rgba(255,255,255,.7)}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:6px 0 26px;padding:20px 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.price b{display:block;font:600 clamp(1.9rem,4.5vw,2.5rem)/1.1 var(--serif);color:#fff;white-space:nowrap;margin-bottom:8px}
+.price div+div b{color:var(--gold)}
+.price span{display:block;font-size:.86rem;line-height:1.5;color:rgba(255,255,255,.7)}
 .call-box{background:rgba(255,255,255,.06);border:1px solid rgba(198,161,91,.45);border-radius:18px;padding:26px}
 .call-box p{color:rgba(255,255,255,.85);margin-bottom:18px}
 .call-box .btn{width:100%}
@@ -274,6 +275,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
   .stat b{font-size:1.5rem}
   .prep{padding:28px 20px}
   .alt{grid-template-columns:1fr}
+  .price{grid-template-columns:1fr;gap:18px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -539,7 +541,11 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
       <p class="eyebrow">Kontakt</p>
       <h2>Poďme spolu naplánovať Váš večer</h2>
       <p class="lead">Cena je vždy individuálna – závisí od Vašich požiadaviek, termínu a priestoru.</p>
-      <div class="price"><b>950 – 1 500 €</b><span>bežné rozpätie pre svadbu</span></div>
+      <!-- Ceny podľa Ferovho cenníka (Cennik - svadobne sluzby 3.pdf) -->
+      <div class="price">
+        <div><b>od 850 €</b><span>základ: hudba do 3:00, moderovanie, zvuk a efektové svetlá na parket</span></div>
+        <div><b>cca 1 300 €</b><span>kompletná svadba: + nasvietenie sály, videoprojekcia a ozvučenie obradu</span></div>
+      </div>
       <div class="call-box">
         <p>Pre rýchlejšie vybavenie a doladenie detailov uprednostňujem telefonát pred dlhými e-mailmi. Za pár minút si povieme Vaše predstavy a hneď Vám poviem ponuku.</p>
         <a class="phone-big" href="tel:+421905560884">0905 560 884</a>
