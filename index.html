@@ -151,10 +151,11 @@ p{margin:0 0 1em}
 .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
 .about-photo{position:relative;padding-bottom:60px}
 .about-photo img{width:88%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:var(--radius)}
-.name-tag{position:absolute;top:28px;left:-22px;z-index:2;background:var(--cream);padding:14px 24px 16px;text-align:center;box-shadow:0 18px 36px -20px rgba(42,37,31,.55);border-top:2px solid var(--gold)}
-.name-tag span{display:flex;align-items:center;justify-content:center;gap:10px;font:600 .66rem/1 var(--sans);letter-spacing:.42em;color:var(--gold-text);margin:0 -.42em 8px 0}
-.name-tag span::before,.name-tag span::after{content:"";width:22px;height:1px;background:var(--gold)}
-.name-tag b{display:block;font:italic 500 clamp(1.6rem,2.6vw,2.05rem)/1.1 'Bodoni Moda',Georgia,serif;color:var(--ink);white-space:nowrap}
+/* celé meno nad nadpisom sekcie O mne */
+.name-sign{margin:0 0 18px}
+.name-sign span{display:flex;align-items:center;gap:10px;font:600 .7rem/1 var(--sans);letter-spacing:.42em;color:var(--gold-text);margin-bottom:8px}
+.name-sign span::after{content:"";width:40px;height:1px;background:var(--gold)}
+.name-sign b{display:block;font:italic 500 clamp(1.9rem,3.4vw,2.6rem)/1.1 'Bodoni Moda',Georgia,serif;color:var(--ink)}
 .approach{position:absolute;right:0;bottom:0;width:62%;background:var(--dark-800);color:rgba(247,242,234,.85);border-radius:var(--radius);padding:26px 26px 24px;font-size:.92rem;line-height:1.6;box-shadow:0 30px 50px -24px rgba(42,37,31,.6)}
 .approach h3{color:var(--gold-light);font-size:1.25rem;margin-bottom:.4em}
 .approach p{margin:0}
@@ -327,7 +328,6 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
   .about-photo{padding-bottom:0}
   .about-photo img{width:100%}
   .approach{position:relative;width:auto;margin:-48px 14px 0}
-  .name-tag{left:12px;top:16px;padding:10px 16px 12px}
   .stats{gap:10px}
   .stat b{font-size:1.5rem}
   .event h3{font-size:1.1rem}
@@ -416,14 +416,13 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
   <div class="wrap">
     <div class="about-photo">
       <img src="fotky/o-mne.webp" width="820" height="1024" alt="František Zsíros – DJ Feri s mikrofónom pri pulte" loading="lazy">
-      <p class="name-tag"><span>DJ FERI</span><b>František Zsíros</b></p>
       <div class="approach">
         <h3>Individuálny prístup</h3>
         <p>Ku každej akcii pristupujem zodpovedne a s rešpektom k Vašim predstavám. Najradšej sa s Vami stretnem osobne – spolu doladíme harmonogram aj hudbu tak, aby Váš deň prebehol plynulo a bez stresu.</p>
       </div>
     </div>
     <div class="about-text">
-      <p class="eyebrow">O mne</p>
+      <p class="name-sign"><span>O MNE · DJ FERI</span><b>František Zsíros</b></p>
       <h2>Skúsenosti, ktoré na parkete spoznáte</h2>
       <span class="rule"></span>
       <p class="lead">Som DJ a moderátor zo Žiliny s dlhoročnou praxou a zmyslom pre detail. Za sebou mám tisíce diskotékových produkcií a stovky úspešných svadieb a eventov po celom Slovensku.</p>
