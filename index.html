@@ -63,7 +63,7 @@
    Zlatá + béžová + teplá tmavohnedá (podľa Ferovho pôvodného návrhu, tmavá je o trochu svetlejšia). */
 :root{
   --dark-900:#2A251F; --dark-800:#3B342C; --dark-700:#4E4438;
-  --gold:#C2A56B; --gold-dark:#A88B50; --gold-light:#D8C8A2; --gold-text:#8C7637;
+  --gold:#C9A04A; --gold-dark:#A9832F; --gold-light:#E2C98C; --gold-text:#87661C;
   --ink:#2E2A24; --muted:#635C4E; --line:#E2D8C6;
   --cream:#F7F2EA; --sand:#EFE8DB; --card:#FFFDF9;
   --serif:'Playfair Display',Georgia,'Times New Roman',serif;
@@ -82,7 +82,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 .5
 h2{font-size:clamp(2rem,4.5vw,2.75rem)}
 h3{font-size:1.35rem}
 p{margin:0 0 1em}
-.eyebrow{font:600 .75rem/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);margin:0 0 14px}
+.eyebrow{font:600 .88rem/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text);margin:0 0 14px}
 .lead{font-size:1.1rem;color:var(--muted);max-width:60ch}
 .center{text-align:center}
 .center .lead{margin-left:auto;margin-right:auto}
@@ -138,6 +138,7 @@ p{margin:0 0 1em}
   radial-gradient(60% 55% at 50% 50%,rgba(42,37,31,.45),transparent 75%),
   linear-gradient(180deg,rgba(42,37,31,.5) 0%,rgba(42,37,31,.52) 55%,rgba(42,37,31,.82) 100%)}
 .hero .wrap{max-width:900px}
+.hero .eyebrow{font-size:clamp(.92rem,1.7vw,1.1rem);letter-spacing:.24em}
 .hero h1{font-size:clamp(2.6rem,7vw,5rem);margin-bottom:.35em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--gold-light);display:block}
 .hero .lead{font-size:1.15rem;margin:0 auto 34px;color:rgba(255,255,255,.9);text-shadow:0 1px 12px rgba(0,0,0,.4)}
@@ -153,7 +154,7 @@ p{margin:0 0 1em}
 .about-photo img{width:88%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:var(--radius)}
 /* celé meno nad nadpisom sekcie O mne */
 .name-sign{margin:0 0 18px}
-.name-sign span{display:flex;align-items:center;gap:10px;font:600 .7rem/1 var(--sans);letter-spacing:.42em;color:var(--gold-text);margin-bottom:8px}
+.name-sign span{display:flex;align-items:center;gap:10px;font:600 .82rem/1 var(--sans);letter-spacing:.38em;color:var(--gold-text);margin-bottom:8px}
 .name-sign span::after{content:"";width:40px;height:1px;background:var(--gold)}
 .name-sign b{display:block;font:italic 500 clamp(1.9rem,3.4vw,2.6rem)/1.1 'Bodoni Moda',Georgia,serif;color:var(--ink)}
 .approach{position:absolute;right:0;bottom:0;width:62%;background:var(--dark-800);color:rgba(247,242,234,.85);border-radius:var(--radius);padding:26px 26px 24px;font-size:.92rem;line-height:1.6;box-shadow:0 30px 50px -24px rgba(42,37,31,.6)}
@@ -179,7 +180,7 @@ p{margin:0 0 1em}
 .card img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .card-body{padding:22px 22px 26px}
 .card p{color:var(--muted);font-size:.93rem}
-.card.featured{border-color:var(--gold);box-shadow:0 24px 48px -28px rgba(140,118,55,.6)}
+.card.featured{border-color:var(--gold);box-shadow:0 24px 48px -28px rgba(135,102,28,.6)}
 .badge{position:absolute;top:12px;left:12px;background:var(--dark-800);color:var(--gold-light);font:600 .68rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;border-radius:3px}
 .dots{list-style:none;padding:0;margin:0;font-size:.88rem;font-weight:500}
 .dots li{position:relative;padding:8px 0 8px 16px;border-top:1px solid var(--line)}
@@ -188,7 +189,7 @@ p{margin:0 0 1em}
 /* ===== RÉŽIA A HUDBA (tmavá, dva stĺpce) ===== */
 .direction .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
 .direction .col{padding:0 56px}
-.direction .col:first-child{padding-left:0;border-right:1px solid rgba(194,165,107,.3)}
+.direction .col:first-child{padding-left:0;border-right:1px solid rgba(201,160,74,.3)}
 .direction .col:last-child{padding-right:0}
 .direction h2{color:#fff}
 .moments{list-style:none;padding:0;margin:22px 0 0;counter-reset:m}
@@ -201,7 +202,7 @@ p{margin:0 0 1em}
 /* ===== CENNÍK ===== */
 .prices{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin:44px auto 0}
 .price-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px 32px;display:flex;flex-direction:column}
-.price-card.featured{border:1.5px solid var(--gold);box-shadow:0 30px 60px -40px rgba(140,118,55,.7)}
+.price-card.featured{border:1.5px solid var(--gold);box-shadow:0 30px 60px -40px rgba(135,102,28,.7)}
 .price-card .eyebrow{margin-bottom:8px}
 .price-card h3{font-size:1.5rem}
 .price-card .amount{font:600 clamp(2.2rem,5vw,2.8rem)/1.1 var(--serif);color:var(--ink);margin:4px 0 18px;white-space:nowrap}
@@ -258,7 +259,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 /* ===== KONTAKT (tmavý) ===== */
 .contact{padding:104px 0 0}
 .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
-.call-box{background:rgba(255,255,255,.06);border:1px solid rgba(194,165,107,.5);border-radius:18px;padding:26px;margin-top:10px}
+.call-box{background:rgba(255,255,255,.06);border:1px solid rgba(201,160,74,.5);border-radius:18px;padding:26px;margin-top:10px}
 .call-box p{color:rgba(247,242,234,.88);margin-bottom:18px}
 .call-box .btn{width:100%}
 .phone-big{display:block;font:600 clamp(1.8rem,4.5vw,2.4rem)/1.2 var(--serif);color:#fff;text-decoration:none;margin:0 0 14px;text-align:center}
@@ -280,7 +281,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 .foot li{margin-bottom:6px}
 .foot a{color:rgba(247,242,234,.85);text-decoration:none}
 .foot a:hover{color:#fff;text-decoration:underline}
-.foot h4{font:600 .72rem/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:6px 0 12px}
+.foot h4{font:600 .8rem/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:6px 0 12px}
 .foot .copy{margin-top:32px;padding-top:20px;border-top:1px solid rgba(247,242,234,.08);font-size:.8rem}
 
 /* ===== LIŠTA „ZAVOLAŤ“ NA MOBILE ===== */
@@ -322,6 +323,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
   .wrap{padding:0 16px}
   .brand svg{height:38px}
   .top .tel-num{display:none}
+  .hero .eyebrow{font-size:.8rem;letter-spacing:.12em}
   .top .btn-primary{padding:0 13px}
   .actions .btn{flex:1 1 100%}
   .cards{grid-template-columns:1fr}
@@ -345,13 +347,13 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="sw-a" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#E9D7A8" stop-opacity=".5"/>
-      <stop offset=".55" stop-color="#C2A56B" stop-opacity=".25"/>
-      <stop offset="1" stop-color="#C2A56B" stop-opacity="0"/>
+      <stop offset="0" stop-color="#EFD594" stop-opacity=".5"/>
+      <stop offset=".55" stop-color="#C9A04A" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#C9A04A" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="sw-b" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#A88B50" stop-opacity=".3"/>
-      <stop offset="1" stop-color="#A88B50" stop-opacity="0"/>
+      <stop offset="0" stop-color="#A9832F" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#A9832F" stop-opacity="0"/>
     </linearGradient>
     <filter id="sw-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="16"/></filter>
     <filter id="sw-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2"/></filter>
@@ -359,7 +361,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
       <path d="M-20 420 C 160 640, 520 720, 1220 690" fill="none" stroke="url(#sw-b)" stroke-width="80" filter="url(#sw-blur)"/>
       <path d="M-10 410 C 180 610, 500 680, 1100 680" fill="none" stroke="url(#sw-a)" stroke-width="20" filter="url(#sw-blur)"/>
       <path d="M0 425 C 200 630, 540 700, 1220 695" fill="none" stroke="url(#sw-a)" stroke-width="2" filter="url(#sw-glow)"/>
-      <path d="M0 425 C 200 630, 540 700, 1220 695" fill="none" stroke="#F3E6C4" stroke-opacity=".4" stroke-width=".8"/>
+      <path d="M0 425 C 200 630, 540 700, 1220 695" fill="none" stroke="#F5E3B0" stroke-opacity=".4" stroke-width=".8"/>
     </symbol>
     <!-- LOGO: „DJ FERI“ (písmo Cinzel), zlatá linka a „WEDDING & EVENT“ -->
     <symbol id="logo" viewBox="40 10 222 72">
