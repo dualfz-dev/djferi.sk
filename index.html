@@ -279,7 +279,10 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 @media (max-width:860px){
   section{padding:68px 0}
   .hero{min-height:0;padding:80px 0 96px}
-  .about .wrap,.contact-grid,.foot-grid,.prices{grid-template-columns:1fr;gap:36px}
+  .about .wrap,.contact-grid,.prices{grid-template-columns:1fr;gap:36px}
+  /* pätička: logo cez celú šírku, pod ním Stránka a Kontakt vedľa seba */
+  .foot-grid{grid-template-columns:1fr 1fr;gap:28px 20px}
+  .foot-grid>div:first-child{grid-column:1/-1}
   .about-photo{max-width:460px}
   .direction .wrap{grid-template-columns:1fr;gap:48px}
   .direction .col,.direction .col:first-child,.direction .col:last-child{padding:0;border:0}
