@@ -108,6 +108,15 @@ p{margin:0 0 1em}
 .nav a{text-decoration:none;color:var(--muted)}
 .nav a:hover{color:var(--gold-text)}
 .top .btn{min-height:40px;padding:0 16px;font-size:.74rem}
+.top-right{display:flex;align-items:center;gap:10px}
+/* tlačidlo MENU – len na mobile a tablete */
+.menu-btn{display:none;align-items:center;gap:10px;height:40px;padding:0 12px;border:1px solid var(--line);border-radius:3px;background:var(--card);color:var(--ink);font:600 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.menu-btn i{position:relative;display:block;width:18px;height:2px;background:currentColor;transition:background .2s}
+.menu-btn i::before,.menu-btn i::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor;transition:transform .2s}
+.menu-btn i::before{top:-6px}.menu-btn i::after{top:6px}
+.menu-btn[aria-expanded="true"] i{background:transparent}
+.menu-btn[aria-expanded="true"] i::before{transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] i::after{transform:translateY(-6px) rotate(-45deg)}
 
 /* ===== TMAVÉ SEKCIE (úvod, réžia, kontakt) ===== */
 .dark{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:radial-gradient(120% 90% at 0% 40%,#584C3E 0%,var(--dark-800) 45%,var(--dark-900) 100%)}
@@ -274,7 +283,11 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
   .events{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:1020px){
-  .nav{display:none}
+  .menu-btn{display:inline-flex}
+  .nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;padding:6px 20px 18px;background:var(--cream);border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(42,37,31,.35)}
+  .nav.open{display:flex}
+  .nav a{padding:15px 0;border-bottom:1px solid var(--line);font-size:1rem;color:var(--ink)}
+  .nav a:last-child{border-bottom:0}
 }
 @media (max-width:860px){
   section{padding:68px 0}
@@ -297,6 +310,8 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 @media (max-width:520px){
   .wrap{padding:0 16px}
   .brand svg{height:48px}
+  .top .tel-num{display:none}
+  .top .btn-primary{padding:0 13px}
   .actions .btn{flex:1 1 100%}
   .cards{grid-template-columns:1fr}
   .about-photo{padding-bottom:0}
@@ -350,7 +365,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#" aria-label="DJ Feri – na začiatok stránky"><svg viewBox="0 0 182 100" aria-hidden="true"><use href="#logo" width="182" height="100"/></svg></a>
-    <nav class="nav" aria-label="Hlavné menu">
+    <nav class="nav" id="menu" aria-label="Hlavné menu">
       <a href="#o-mne">O mne</a>
       <a href="#referencie">Referencie</a>
       <a href="#akcie">Akcie</a>
@@ -358,7 +373,10 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
       <a href="#cennik">Cenník</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a class="btn btn-primary" href="tel:+421905560884"><svg aria-hidden="true"><use href="#tel"/></svg>0905 560 884</a>
+    <div class="top-right">
+      <a class="btn btn-primary" href="tel:+421905560884" aria-label="Zavolať 0905 560 884"><svg aria-hidden="true"><use href="#tel"/></svg><span class="tel-num">0905 560 884</span></a>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu"><i aria-hidden="true"></i>Menu</button>
+    </div>
   </div>
 </header>
 
@@ -632,7 +650,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
   <div class="strip">
     <button type="button" class="strip-btn prev" aria-label="Predchádzajúce fotky">←</button>
     <div class="strip-track">
-        <a href="fotky/galeria-10.webp"><img src="fotky/galeria-10.webp" width="1000" height="750" alt="Novomanželia krájajú tortu medzi studenými iskrami na nádvorí" loading="lazy"></a>
+        <a href="fotky/galeria-15.webp"><img src="fotky/galeria-15.webp" width="1000" height="667" alt="Novomanželia pri torte medzi svetelnými fontánami" loading="lazy"></a>
         <a href="fotky/galeria-17.webp"><img src="fotky/galeria-17.webp" width="1000" height="667" alt="Ružovo nasvietená svadobná sála so svetelnými efektmi" loading="lazy"></a>
         <a href="fotky/galeria-14.webp"><img src="fotky/galeria-14.webp" width="1000" height="667" alt="DJ Feri s mikrofónom moderuje večer" loading="lazy"></a>
         <a href="fotky/galeria-01.webp"><img src="fotky/galeria-01.webp" width="1000" height="665" alt="Nevesta a hostia tancujú v kruhu" loading="lazy"></a>
@@ -640,7 +658,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
         <a href="fotky/galeria-05.webp"><img src="fotky/galeria-05.webp" width="1000" height="665" alt="Novomanželia medzi svetelnými fontánami vonku" loading="lazy"></a>
         <a href="fotky/galeria-11.webp"><img src="fotky/galeria-11.webp" width="1000" height="667" alt="Prvý tanec novomanželov v modro nasvietenej sále" loading="lazy"></a>
         <a href="fotky/galeria-23.webp"><img src="fotky/galeria-23.webp" width="1000" height="667" alt="Modro nasvietená svadobná sála" loading="lazy"></a>
-        <a href="fotky/galeria-04.webp"><img src="fotky/galeria-04.webp" width="1000" height="668" alt="Plný parket pred DJ pódiom so svetelnými lúčmi" loading="lazy"></a>
+        <a href="fotky/galeria-10.webp"><img src="fotky/galeria-10.webp" width="1000" height="750" alt="Novomanželia krájajú tortu medzi studenými iskrami na nádvorí" loading="lazy"></a>
         <a href="fotky/galeria-07.webp"><img src="fotky/galeria-07.webp" width="1000" height="667" alt="Hostia tancujú v modro nasvietenej sále" loading="lazy"></a>
         <a href="fotky/galeria-16.webp"><img src="fotky/galeria-16.webp" width="1000" height="750" alt="Lúče svetiel nad sálou plnou hostí" loading="lazy"></a>
         <a href="fotky/galeria-28.webp"><img src="fotky/galeria-28.webp" width="1000" height="750" alt="DJ pult v ružovo nasvietenej sále" loading="lazy"></a>
@@ -654,7 +672,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
         <a href="fotky/galeria-06.webp"><img src="fotky/galeria-06.webp" width="1000" height="750" alt="Hostia s prskavkami okolo novomanželov v noci" loading="lazy"></a>
         <a href="fotky/galeria-27.webp"><img src="fotky/galeria-27.webp" width="1000" height="751" alt="Slávnostne prestreté stoly v nasvietenej sále" loading="lazy"></a>
         <a href="fotky/galeria-09.webp"><img src="fotky/galeria-09.webp" width="1000" height="667" alt="Hostia v klobúkoch sa zabávajú pri svadobnej hre" loading="lazy"></a>
-        <a href="fotky/galeria-15.webp"><img src="fotky/galeria-15.webp" width="1000" height="667" alt="Novomanželia pri torte medzi svetelnými fontánami" loading="lazy"></a>
+        <a href="fotky/galeria-04.webp"><img src="fotky/galeria-04.webp" width="1000" height="668" alt="Plný parket pred DJ pódiom so svetelnými lúčmi" loading="lazy"></a>
         <a href="fotky/galeria-25.webp"><img src="fotky/galeria-25.webp" width="1000" height="667" alt="Sála v teplom svetle s DJ pódiom" loading="lazy"></a>
         <a href="fotky/galeria-21.webp"><img src="fotky/galeria-21.webp" width="1000" height="668" alt="Novomanželia počas svadobného programu" loading="lazy"></a>
         <a href="fotky/galeria-26.webp"><img src="fotky/galeria-26.webp" width="1000" height="667" alt="Svadobný program v modro nasvietenej sále s videoprojekciou" loading="lazy"></a>
@@ -753,6 +771,15 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 </dialog>
 
 <script>
+// Mobilné menu: otvorí/zavrie sa tlačidlom, zavrie sa po kliknutí na odkaz
+(function(){
+  var b=document.querySelector('.menu-btn'), n=document.getElementById('menu'); if(!b||!n) return;
+  function set(o){ n.classList.toggle('open',o); b.setAttribute('aria-expanded',o); }
+  b.addEventListener('click',function(){ set(!n.classList.contains('open')); });
+  n.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+})();
+
 // Galéria: pás fotiek sa sám posúva (zastaví sa pri myši/dotyku), šípky posúvajú ručne
 (function(){
   var t=document.querySelector('.strip-track'); if(!t) return;
