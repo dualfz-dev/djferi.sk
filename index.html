@@ -34,7 +34,7 @@
   "image": "https://djferi.sk/fotky/og.jpg",
   "telephone": "+421905560884",
   "email": "djferi@partydjs.sk",
-  "priceRange": "od 850 €",
+  "priceRange": "od 950 €",
   "address": { "@type": "PostalAddress", "addressLocality": "Žilina", "addressCountry": "SK" },
   "areaServed": "Slovensko",
   "sameAs": [
@@ -187,23 +187,37 @@ p{margin:0 0 1em}
 .price-card .amount{font:600 clamp(2.2rem,5vw,2.8rem)/1.1 var(--serif);color:var(--ink);margin:4px 0 18px;white-space:nowrap}
 .price-card.featured .amount{color:var(--gold-text)}
 .price-card .dots{margin-top:auto}
+.extras{max-width:920px;margin:24px auto 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 32px}
+.extras h3{font-size:1.2rem;margin-bottom:10px}
+.extras ul{list-style:none;padding:0;margin:0}
+.extras li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-weight:500}
+.extras li b{font:600 1.1rem/1.4 var(--serif);color:var(--gold-text);white-space:nowrap}
 .price-note{text-align:center;margin-top:34px}
 .price-note p{color:var(--muted);margin-bottom:18px}
 
 /* ===== ATMOSFÉRA – GALÉRIA ===== */
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px;margin-top:48px}
-.gallery-grid a{display:block;overflow:hidden;border-radius:10px;background:var(--line)}
-.gallery-grid a:first-child{grid-column:span 2;grid-row:span 2}
-.gallery-grid a:nth-child(n+4){grid-column:span 2}
-.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.gallery-grid a:hover img{transform:scale(1.04)}
+/* pás fotiek cez celú šírku: sám sa posúva, dá sa aj ťahať/šípkami */
+.strip{position:relative;margin-top:48px}
+.strip-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 max(20px,calc((100vw - var(--wrap))/2 + 20px));scrollbar-width:none}
+.strip-track::-webkit-scrollbar{display:none}
+.strip-track a{flex:none;scroll-snap-align:center;display:block;overflow:hidden;border-radius:10px;background:var(--line)}
+.strip-track img{height:clamp(240px,40vw,520px);width:auto;transition:transform .5s ease}
+.strip-track a:hover img{transform:scale(1.03)}
+.strip-btn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border:0;border-radius:3px;background:rgba(42,37,31,.75);color:#fff;font:500 1.3rem/1 var(--sans);cursor:pointer;z-index:2}
+.strip-btn:hover{background:var(--dark-900)}
+.strip-btn.prev{left:16px}.strip-btn.next{right:16px}
 .social-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:26px;font-weight:500;font-size:.95rem}
 .social-links a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
 .social-links a:hover{color:var(--gold-text);border-color:var(--gold)}
-dialog.lightbox{padding:0;border:0;background:transparent;max-width:min(1100px,94vw);max-height:90vh}
-dialog.lightbox::backdrop{background:rgba(42,37,31,.94)}
-dialog.lightbox img{max-height:90vh;width:auto;border-radius:8px}
-dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:var(--cream);color:var(--ink);font-size:1.5rem;cursor:pointer}
+dialog.lightbox{padding:0;border:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;overflow:hidden}
+dialog.lightbox::backdrop{background:rgba(42,37,31,.95)}
+dialog.lightbox img{position:absolute;inset:0;margin:auto;max-width:min(1400px,92vw);max-height:86vh;width:auto;height:auto;border-radius:6px}
+dialog.lightbox button{position:fixed;border:0;border-radius:3px;background:rgba(247,242,234,.12);color:#fff;cursor:pointer;font:500 1.4rem/1 var(--sans)}
+dialog.lightbox button:hover{background:rgba(247,242,234,.25)}
+dialog.lightbox .lb-close{top:16px;right:16px;width:48px;height:48px;font-size:1.8rem}
+dialog.lightbox .lb-prev,dialog.lightbox .lb-next{top:50%;transform:translateY(-50%);width:56px;height:72px}
+dialog.lightbox .lb-prev{left:16px}dialog.lightbox .lb-next{right:16px}
+dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:center;color:rgba(247,242,234,.75);font-size:.85rem;letter-spacing:.1em}
 
 /* ===== REFERENCIE ===== */
 .slider{max-width:820px;margin:40px auto 0;text-align:center}
@@ -271,9 +285,9 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
   .direction .col,.direction .col:first-child,.direction .col:last-child{padding:0;border:0}
   .events{grid-template-columns:repeat(2,1fr);gap:10px}
   .event:last-child{grid-column:span 2;aspect-ratio:16/9}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;gap:10px}
-  .gallery-grid a:nth-child(n+4){grid-column:span 1}
-  .gallery-grid a:nth-child(6){grid-column:span 2}
+  .strip-track{gap:10px}
+  .strip-btn{display:none}
+  dialog.lightbox .lb-prev,dialog.lightbox .lb-next{width:44px;height:56px}
   .callbar{display:block}
   .foot{margin-bottom:60px}
 }
@@ -515,45 +529,55 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
         <li>Hrám podľa publika a momentu, nie podľa šablóny</li>
         <li>Plynulé prechody naprieč štýlmi a generáciami</li>
         <li>Priestor pre Vaše obľúbené skladby aj želania hostí</li>
-        <li>Spolu si dohodneme aj to, čo hrať nechcete</li>
+        <li>Spolu si dohodneme, čo hrať – aj čo nehrať</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- ================= CENNÍK ================= -->
-<!-- KONCEPT: provizórne podľa cenníka (Cennik - svadobne sluzby 3.pdf), Fero ho ešte prepracuje -->
+<!-- Podľa Ferovho návrhu cenníka (podklady/Cennik navrh .pages) -->
 <section class="sand" id="cennik">
   <div class="wrap">
     <div class="center">
       <p class="eyebrow">Cenník</p>
-      <h2>Koľko to stojí</h2>
+      <h2>Koľko čo približne stojí</h2>
       <span class="rule"></span>
-      <p class="lead">Cenu si skladáte sami: začnete základom a doplníte ho podľa Vašej akcie.</p>
+      <p class="lead">Cenu si skladáte sami: začnete základom a doplníte ho podľa Vašich požiadaviek. Presnú cenu je možné objektívne určiť až na základe Vami upresnených potrebných detailov.</p>
     </div>
     <div class="prices">
       <div class="price-card">
         <p class="eyebrow">Základ</p>
         <h3>Svadobná DJ produkcia</h3>
-        <p class="amount">od 850 €</p>
+        <p class="amount">od 950 €</p>
         <ul class="dots">
           <li>Hudobná produkcia a moderovanie</li>
           <li>Zvuková technika a bezdrôtové mikrofóny</li>
           <li>Efektové svetlá na tanečný parket</li>
-          <li>Hudba do 3:00</li>
+          <li>Hudba do 3:30</li>
         </ul>
       </div>
       <div class="price-card featured">
         <p class="eyebrow">Najčastejšia voľba párov</p>
         <h3>Kompletný svadobný zážitok</h3>
-        <p class="amount">cca 1 300 €</p>
+        <p class="amount">cca 1 250 €</p>
         <ul class="dots">
           <li>Všetko zo základu</li>
-          <li>Ambientné nasvietenie sály</li>
+          <li>Dokonalejšie nasvietenie tanečného parketu</li>
+          <li>Ambientné nasvietenie celej sály</li>
           <li>Videoprojekcia a Just Dance</li>
-          <li>Ozvučenie obradu</li>
+          <li>Studené iskry</li>
+          <li>Bublinky</li>
+          <li>Zrkadlová guľa</li>
         </ul>
       </div>
+    </div>
+    <div class="extras">
+      <h3>Žiadané doplnky</h3>
+      <ul>
+        <li>Plazivý dym – Tanec v oblakoch <b>230 €</b></li>
+        <li>Ozvučenie sobáša <b>150 €</b></li>
+      </ul>
     </div>
     <div class="price-note">
       <p>Presnú ponuku pre Vašu akciu Vám poviem hneď do telefónu.</p>
@@ -570,14 +594,23 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
       <h2>Momenty, ktoré zostanú</h2>
       <span class="rule"></span>
     </div>
-    <div class="gallery-grid">
-      <a href="fotky/galeria-04.webp"><img src="fotky/galeria-04.webp" width="1000" height="668" alt="Plný parket pred DJ pódiom so svetelnými lúčmi" loading="lazy"></a>
-      <a href="fotky/galeria-01.webp"><img src="fotky/galeria-01.webp" width="1000" height="665" alt="Nevesta a hostia tancujú v kruhu" loading="lazy"></a>
-      <a href="fotky/galeria-02.webp"><img src="fotky/galeria-02.webp" width="1000" height="665" alt="Hostia tancujú v nasvietenej sále" loading="lazy"></a>
-      <a href="fotky/galeria-03.webp"><img src="fotky/galeria-03.webp" width="1000" height="750" alt="Tancujúci pár v lúčoch svetelných efektov" loading="lazy"></a>
-      <a href="fotky/galeria-05.webp"><img src="fotky/galeria-05.webp" width="1000" height="665" alt="Novomanželia medzi svetelnými fontánami vonku" loading="lazy"></a>
-      <a href="fotky/galeria-06.webp"><img src="fotky/galeria-06.webp" width="1000" height="750" alt="Hostia s prskavkami okolo novomanželov v noci" loading="lazy"></a>
+  </div>
+  <div class="strip">
+    <button type="button" class="strip-btn prev" aria-label="Predchádzajúce fotky">←</button>
+    <div class="strip-track">
+        <a href="fotky/galeria-04.webp"><img src="fotky/galeria-04.webp" width="1000" height="668" alt="Plný parket pred DJ pódiom so svetelnými lúčmi" loading="lazy"></a>
+        <a href="fotky/galeria-01.webp"><img src="fotky/galeria-01.webp" width="1000" height="665" alt="Nevesta a hostia tancujú v kruhu" loading="lazy"></a>
+        <a href="fotky/galeria-07.webp"><img src="fotky/galeria-07.webp" width="1000" height="667" alt="Hostia tancujú v modro nasvietenej sále" loading="lazy"></a>
+        <a href="fotky/galeria-03.webp"><img src="fotky/galeria-03.webp" width="1000" height="750" alt="Tancujúci pár v lúčoch svetelných efektov" loading="lazy"></a>
+        <a href="fotky/galeria-02.webp"><img src="fotky/galeria-02.webp" width="1000" height="665" alt="Hostia tancujú v nasvietenej sále" loading="lazy"></a>
+        <a href="fotky/galeria-05.webp"><img src="fotky/galeria-05.webp" width="1000" height="665" alt="Novomanželia medzi svetelnými fontánami vonku" loading="lazy"></a>
+        <a href="fotky/galeria-08.webp"><img src="fotky/galeria-08.webp" width="1000" height="665" alt="Tanec na parkete v plazivom dyme" loading="lazy"></a>
+        <a href="fotky/galeria-06.webp"><img src="fotky/galeria-06.webp" width="1000" height="750" alt="Hostia s prskavkami okolo novomanželov v noci" loading="lazy"></a>
+        <a href="fotky/galeria-09.webp"><img src="fotky/galeria-09.webp" width="1000" height="667" alt="Hostia v klobúkoch sa zabávajú pri svadobnej hre" loading="lazy"></a>
     </div>
+    <button type="button" class="strip-btn next" aria-label="Ďalšie fotky">→</button>
+  </div>
+  <div class="wrap">
     <div class="social-links">
       <a href="https://www.instagram.com/djferi_partydjs/" target="_blank" rel="noopener">Viac fotiek a videí na Instagrame</a>
       <a href="https://www.facebook.com/DjFeri.Partydjs" target="_blank" rel="noopener">Facebook</a>
@@ -626,7 +659,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
       <h2>Poďme spolu naplánovať Váš večer</h2>
       <p class="lead">Ozvite sa mi – rád si vypočujem Vaše predstavy a pripravím Vám ponuku na mieru, prispôsobenú aj Vášmu plánovanému rozpočtu.</p>
       <div class="call-box">
-        <p>Pre rýchlejšie vybavenie a doladenie detailov uprednostňujem telefonát pred dlhými e-mailmi. Za pár minút si povieme Vaše predstavy a hneď Vám poviem ponuku.</p>
+        <p>Pre rýchlejšie vybavenie a doladenie detailov uprednostňujem telefonát pred dlhými e-mailmi. Za pár minút si povieme všetko potrebné a hneď Vám poviem ponuku.</p>
         <a class="phone-big" href="tel:+421905560884">0905 560 884</a>
         <a class="btn btn-primary btn-big" href="tel:+421905560884"><svg aria-hidden="true"><use href="#tel"/></svg>Zavolať Ferimu</a>
       </div>
@@ -690,19 +723,58 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
 </div>
 
 <dialog class="lightbox" aria-label="Zväčšená fotka">
-  <button type="button" aria-label="Zavrieť">×</button>
   <img alt="">
+  <button type="button" class="lb-prev" aria-label="Predchádzajúca fotka">←</button>
+  <button type="button" class="lb-next" aria-label="Ďalšia fotka">→</button>
+  <button type="button" class="lb-close" aria-label="Zavrieť">×</button>
+  <p class="lb-count"></p>
 </dialog>
 
 <script>
-// Galéria: kliknutím sa fotka zväčší
+// Galéria: pás fotiek sa sám posúva (zastaví sa pri myši/dotyku), šípky posúvajú ručne
+(function(){
+  var t=document.querySelector('.strip-track'); if(!t) return;
+  var items=t.querySelectorAll('a'), paused=false, timer;
+  function step(dir){
+    var w=items[0].offsetWidth+14;
+    if(dir>0&&t.scrollLeft+t.clientWidth>=t.scrollWidth-5) t.scrollTo({left:0});
+    else if(dir<0&&t.scrollLeft<=5) t.scrollTo({left:t.scrollWidth});
+    else t.scrollBy({left:dir*w});
+  }
+  document.querySelector('.strip-btn.prev').addEventListener('click',function(){step(-1);});
+  document.querySelector('.strip-btn.next').addEventListener('click',function(){step(1);});
+  ['mouseenter','touchstart','focusin'].forEach(function(e){t.addEventListener(e,function(){paused=true;},{passive:true});});
+  t.addEventListener('mouseleave',function(){paused=false;});
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  timer=setInterval(function(){ if(!paused&&!document.hidden&&!document.querySelector('.lightbox[open]')) step(1); },3500);
+})();
+
+// Galéria: kliknutím sa fotka zväčší, listovať sa dá šípkami, klávesmi aj potiahnutím prstom
 (function(){
   var d=document.querySelector('.lightbox'); if(!d||!d.showModal) return;
-  var im=d.querySelector('img');
-  document.querySelectorAll('.gallery-grid a').forEach(function(a){
-    a.addEventListener('click',function(e){e.preventDefault();im.src=a.href;im.alt=a.querySelector('img').alt;d.showModal();});
+  var im=d.querySelector('img'), cnt=d.querySelector('.lb-count');
+  var links=[].slice.call(document.querySelectorAll('.strip-track a')), i=0, x0=null;
+  function show(n){
+    i=(n+links.length)%links.length;
+    im.src=links[i].href; im.alt=links[i].querySelector('img').alt;
+    cnt.textContent=(i+1)+' / '+links.length;
+  }
+  links.forEach(function(a,n){
+    a.addEventListener('click',function(e){e.preventDefault();show(n);d.showModal();});
   });
-  d.addEventListener('click',function(e){if(e.target!==im) d.close();});
+  d.querySelector('.lb-prev').addEventListener('click',function(){show(i-1);});
+  d.querySelector('.lb-next').addEventListener('click',function(){show(i+1);});
+  d.querySelector('.lb-close').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d) d.close();});
+  d.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft') show(i-1);
+    if(e.key==='ArrowRight') show(i+1);
+  });
+  d.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  d.addEventListener('touchend',function(e){
+    if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>40) show(dx<0?i+1:i-1);
+  });
 })();
 
 // Referencie: prepínanie šípkami a bodkami
