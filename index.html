@@ -128,7 +128,9 @@ p{margin:0 0 1em}
 .hero .lead{font-size:1.15rem;margin:0 auto 34px;color:rgba(255,255,255,.9);text-shadow:0 1px 12px rgba(0,0,0,.4)}
 .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .hero .actions{justify-content:center}
-.hero-quote{margin:34px 0 0;font:italic 500 1.05rem/1.4 var(--serif);color:rgba(255,255,255,.8)}
+/* Ferov slogan – zvýraznený, so zlatými linkami po bokoch */
+.hero-quote{display:flex;align-items:center;justify-content:center;gap:18px;margin:40px auto 0;font:italic 500 clamp(1.3rem,2.8vw,1.8rem)/1.35 var(--serif);color:var(--gold-light);text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.hero-quote::before,.hero-quote::after{content:"";flex:0 0 clamp(28px,6vw,64px);height:1px;background:var(--gold)}
 
 /* ===== O MNE ===== */
 .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
@@ -377,7 +379,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
       <p class="eyebrow">O mne</p>
       <h2>Skúsenosti, ktoré na parkete spoznáte</h2>
       <span class="rule"></span>
-      <p class="lead">Som skúsený DJ a moderátor zo Žiliny s dlhoročnou praxou a zmyslom pre detail. Za sebou mám tisíce diskotékových produkcií a stovky úspešných svadieb a eventov po celom Slovensku.</p>
+      <p class="lead">Som DJ a moderátor zo Žiliny s dlhoročnou praxou a zmyslom pre detail. Za sebou mám tisíce diskotékových produkcií a stovky úspešných svadieb a eventov po celom Slovensku.</p>
       <p>Okrem „povinnej komercie“ mám vďaka dlhej kariére oveľa širší hudobný záber ako DJ-i, ktorí hrajú len svadby. Preto viem pružne reagovať aj na nečakané situácie a vyhoviem aj náročnejšiemu publiku – napríklad aj rockovo ladenému.</p>
       <p>Som multižánrový, flexibilný a neustále zladený s aktuálnymi hudobnými a svadobnými trendmi. Náladu v sále a na parkete priebežne čítam a hudbu plynulo prispôsobujem tak, aby bol parket vždy plný.</p>
       <div class="stats">
@@ -440,7 +442,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
           <p>Vyvážený mix naprieč žánrami, prispôsobený aj Vašim predstavám – s priestorom hrať aj na želanie hostí.</p>
           <ul class="dots">
             <li>Výber hudby a playlist na mieru</li>
-            <li>Wish list a black list – samozrejmosťou</li>
+            <li>Wish list a black list – podľa Vášho želania</li>
             <li>Kvalitný zvuk a bezdrôtové mikrofóny</li>
           </ul>
         </div>
@@ -492,9 +494,10 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
   <div class="wrap">
     <div class="col">
       <p class="eyebrow">Réžia a atmosféra</p>
-      <h2>Postarám sa o celý večer</h2>
+      <h2>Postarám sa o plynulý priebeh večera</h2>
       <span class="rule"></span>
-      <p>DJ nemá len stáť v kúte a púšťať pesničky. Hudba, svetlo aj slovo majú spolu vytvoriť atmosféru, na ktorú sa nezabúda. Réžiu večera preberiem na seba, aby ste si svoj deň naozaj užili.</p>
+      <p>DJ nemá len stáť v kúte a púšťať pesničky. Mojím cieľom je vytvoriť krásnu, do detailu zladenú scénu – kde hudba, svetlo aj slovo spolu vytvárajú atmosféru, na ktorú sa nezabúda.</p>
+      <p>Réžiu večera vezmem na seba, aby všetko plynulo a Vy ste si svoj deň naozaj užili:</p>
       <ol class="moments">
         <li>Uvedenie mladomanželov do sály</li>
         <li>Krájanie svadobnej torty</li>
@@ -507,7 +510,7 @@ dialog.lightbox button{position:fixed;top:16px;right:16px;width:44px;height:44px
       <p class="eyebrow">Hudba na mieru</p>
       <h2>Flexibilný multižánrový prístup</h2>
       <span class="rule"></span>
-      <p>Nehrám podľa pevného zoznamu. Výber prispôsobujem Vašim hosťom aj atmosfére večera – od oldies, ktoré poznajú všetci, až po aktuálne hity.</p>
+      <p>Som multižánrový DJ bez fixných playlistov a škatuliek. Čítam náladu sály a pružne prispôsobujem výber hudby Vašim hosťom aj atmosfére večera – tak, aby boli všetci spokojní.</p>
       <ul class="dots">
         <li>Hrám podľa publika a momentu, nie podľa šablóny</li>
         <li>Plynulé prechody naprieč štýlmi a generáciami</li>
