@@ -209,8 +209,8 @@ p{margin:0 0 1em}
 .strip{position:relative;margin-top:48px}
 .strip-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 max(20px,calc((100vw - var(--wrap))/2 + 20px));scrollbar-width:none}
 .strip-track::-webkit-scrollbar{display:none}
-.strip-track a.more{display:none}
-.gal-all{margin:34px 0 0}
+.gal-all{margin:34px 0 0;display:none}
+@media (max-width:860px){.strip-track a.more{display:none}.gal-all{display:block}}
 .strip-track a{flex:none;scroll-snap-align:center;display:block;overflow:hidden;border-radius:10px;background:var(--line)}
 .strip-track img{height:clamp(240px,40vw,520px);width:auto;transition:transform .5s ease}
 .strip-track a:hover img{transform:scale(1.03)}
@@ -824,7 +824,7 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 // Galéria: pás fotiek sa sám posúva (zastaví sa pri myši/dotyku), šípky posúvajú ručne
 (function(){
   var t=document.querySelector('.strip-track'); if(!t) return;
-  var items=t.querySelectorAll('a:not(.more)'), paused=false, timer;
+  var items=t.querySelectorAll('a'), paused=false, timer;
   function step(dir){
     var w=items[0].offsetWidth+14;
     if(dir>0&&t.scrollLeft+t.clientWidth>=t.scrollWidth-5) t.scrollTo({left:0});
