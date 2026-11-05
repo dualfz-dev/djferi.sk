@@ -35,7 +35,7 @@
   "email": "djferi@partydjs.sk",
   "priceRange": "od 950 €",
   "address": { "@type": "PostalAddress", "addressLocality": "Žilina", "addressCountry": "SK" },
-  "areaServed": "Slovensko",
+  "areaServed": [{"@type": "AdministrativeArea", "name": "Žilinský kraj"}, {"@type": "AdministrativeArea", "name": "Trenčiansky kraj"}, {"@type": "AdministrativeArea", "name": "Trnavský kraj"}, {"@type": "AdministrativeArea", "name": "Bratislavský kraj"}, {"@type": "City", "name": "Žilina"}, {"@type": "City", "name": "Martin"}, {"@type": "City", "name": "Čadca"}, {"@type": "City", "name": "Kysucké Nové Mesto"}, {"@type": "City", "name": "Bytča"}, {"@type": "City", "name": "Ružomberok"}, {"@type": "City", "name": "Liptovský Mikuláš"}, {"@type": "City", "name": "Dolný Kubín"}, {"@type": "City", "name": "Námestovo"}, {"@type": "City", "name": "Tvrdošín"}, {"@type": "City", "name": "Turčianske Teplice"}, {"@type": "City", "name": "Trenčín"}, {"@type": "City", "name": "Považská Bystrica"}, {"@type": "City", "name": "Púchov"}, {"@type": "City", "name": "Ilava"}, {"@type": "City", "name": "Nové Mesto nad Váhom"}, {"@type": "City", "name": "Myjava"}, {"@type": "City", "name": "Bánovce nad Bebravou"}, {"@type": "City", "name": "Prievidza"}, {"@type": "City", "name": "Partizánske"}, {"@type": "City", "name": "Trnava"}, {"@type": "City", "name": "Piešťany"}, {"@type": "City", "name": "Hlohovec"}, {"@type": "City", "name": "Galanta"}, {"@type": "City", "name": "Dunajská Streda"}, {"@type": "City", "name": "Senica"}, {"@type": "City", "name": "Skalica"}, {"@type": "City", "name": "Bratislava"}, {"@type": "City", "name": "Pezinok"}, {"@type": "City", "name": "Senec"}, {"@type": "City", "name": "Malacky"}],
   "sameAs": [
     "https://www.instagram.com/djferi_partydjs/",
     "https://www.facebook.com/DjFeri.Partydjs"
@@ -275,6 +275,10 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 .social a{width:42px;height:42px;border:1px solid rgba(201,160,74,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:.2s}
 .social a:hover{background:var(--gold);color:var(--dark-900);text-decoration:none}
 .social svg{width:20px;height:20px}
+.area{margin-top:36px;padding-top:28px;border-top:1px solid rgba(247,242,234,.08)}
+.area p{font-size:.84rem;line-height:1.7;margin:0 0 6px}
+.area strong{color:rgba(247,242,234,.9);font-weight:600}
+.area-note{margin-top:10px!important}
 .foot .copy{margin-top:32px;padding-top:20px;border-top:1px solid rgba(247,242,234,.08);font-size:.8rem}
 
 /* ===== LIŠTA „ZAVOLAŤ“ NA MOBILE ===== */
@@ -748,6 +752,14 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
             <a href="https://www.facebook.com/DjFeri.Partydjs" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg></a>
           </div>
         </div>
+      </div>
+      <div class="area">
+        <h4>Kde pôsobím</h4>
+          <p><strong>Žilinský kraj:</strong> Žilina, Martin, Čadca, Kysucké Nové Mesto, Bytča, Ružomberok, Liptovský Mikuláš, Dolný Kubín, Námestovo, Tvrdošín, Turčianske Teplice</p>
+          <p><strong>Trenčiansky kraj:</strong> Trenčín, Považská Bystrica, Púchov, Ilava, Nové Mesto nad Váhom, Myjava, Bánovce nad Bebravou, Prievidza, Partizánske</p>
+          <p><strong>Trnavský kraj:</strong> Trnava, Piešťany, Hlohovec, Galanta, Dunajská Streda, Senica, Skalica</p>
+          <p><strong>Bratislavský kraj:</strong> Bratislava, Pezinok, Senec, Malacky</p>
+        <p class="area-note">Na požiadanie aj kdekoľvek inde na Slovensku.</p>
       </div>
       <p class="copy">© 2026 DJ Feri · Party DJs</p>
     </div>
