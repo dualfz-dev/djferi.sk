@@ -277,8 +277,17 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
 .social a:hover{background:var(--gold);color:var(--dark-900);text-decoration:none}
 .social svg{width:20px;height:20px}
 .area{margin-top:36px;padding-top:28px;border-top:1px solid rgba(247,242,234,.08)}
-.area p{font-size:.84rem;line-height:1.7;margin:0 0 6px}
-.area strong{color:rgba(247,242,234,.9);font-weight:600}
+.area summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
+.area summary::-webkit-details-marker{display:none}
+.area-top{display:contents}
+.area-top span{color:rgba(247,242,234,.85);font-size:.9rem}
+.area-more{color:var(--gold);font-size:.9rem;font-weight:600;white-space:nowrap}
+.area-more span{display:inline-block;transition:transform .2s}
+.area details[open] .area-more span{transform:rotate(90deg)}
+.area summary:hover .area-more{color:var(--gold-light)}
+.area-all{margin-top:18px}
+.area-all p{font-size:.84rem;line-height:1.7;margin:0 0 6px}
+.area-all strong{color:rgba(247,242,234,.9);font-weight:600}
 .area-note{margin-top:10px!important}
 .foot .copy{margin-top:32px;padding-top:20px;border-top:1px solid rgba(247,242,234,.08);font-size:.8rem}
 
@@ -765,11 +774,16 @@ dialog.lightbox .lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:c
       </div>
       <div class="area">
         <h4>Kde pôsobím</h4>
+        <details>
+          <summary><span class="area-top"><span>Žilina</span><span>Martin</span><span>Trenčín</span><span>Považská Bystrica</span><span>Ružomberok</span><span>Liptovský Mikuláš</span><span>Čadca</span><span>Trnava</span><span>Piešťany</span><span>Bratislava</span></span><span class="area-more">Všetky mestá <span aria-hidden="true">→</span></span></summary>
+          <div class="area-all">
           <p><strong>Žilinský kraj:</strong> Žilina, Martin, Čadca, Kysucké Nové Mesto, Bytča, Ružomberok, Liptovský Mikuláš, Dolný Kubín, Námestovo, Tvrdošín, Turčianske Teplice</p>
           <p><strong>Trenčiansky kraj:</strong> Trenčín, Považská Bystrica, Púchov, Ilava, Nové Mesto nad Váhom, Myjava, Bánovce nad Bebravou, Prievidza, Partizánske</p>
           <p><strong>Trnavský kraj:</strong> Trnava, Piešťany, Hlohovec, Galanta, Dunajská Streda, Senica, Skalica</p>
           <p><strong>Bratislavský kraj:</strong> Bratislava, Pezinok, Senec, Malacky</p>
-        <p class="area-note">Na požiadanie aj kdekoľvek inde na Slovensku.</p>
+            <p class="area-note">Na požiadanie aj kdekoľvek inde na Slovensku.</p>
+          </div>
+        </details>
       </div>
       <p class="copy">© 2026 František Zsíros – DJ Feri · Party DJs</p>
     </div>
